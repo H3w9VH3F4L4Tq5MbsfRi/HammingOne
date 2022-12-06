@@ -45,7 +45,7 @@ __global__ void addKernel(const unsigned long long* data, const int n, const int
             multipleDiffSpotted = true;
         }
 
-        if (!multipleDiffSpotted)
+        if (!multipleDiffSpotted && singleDiffSpotted)
         {
             if (verbose)
                 printf("%d is a pair with %d \n", i, j);
@@ -180,7 +180,7 @@ int main(int argc, char** argv)
                     multipleDiffSpotted = true;
                 }
 
-                if (!multipleDiffSpotted)
+                if (!multipleDiffSpotted && singleDiffSpotted)
                 {
                     if (verbose)
                         std::cout << i << " is a pair with " << j << std::endl;
